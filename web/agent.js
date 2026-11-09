@@ -277,7 +277,7 @@
     ".chip.flash{animation:pa-chip .8s ease-out}",
     "@keyframes pa-chip{from{border-color:rgba(255,200,110,.95);box-shadow:0 0 0 3px rgba(255,143,43,.2);color:#ffe6b0}}",
     ".field{display:flex;align-items:flex-end;gap:8px;background:var(--bg2);border:1px solid var(--line2);border-radius:16px;padding:6px 6px 6px 14px;transition:border-color .2s,box-shadow .2s}",
-    ".field:focus-within{border-color:color-mix(in srgb,var(--heat-ui) 65%,transparent);box-shadow:0 0 0 3px color-mix(in srgb,var(--heat-ui) 14%,transparent)}",
+    ".field:focus-within{border-color:var(--heat-ui);box-shadow:0 0 0 3px color-mix(in srgb,var(--heat-ui) 14%,transparent)}",
     "textarea{flex:1;resize:none;border:0;outline:0;background:transparent;color:var(--text);font:inherit;font-size:16px;line-height:1.6;padding:6px 0;margin:0;",
     "max-height:170px;min-height:38px;height:38px;caret-color:var(--heat-ui)}",
     "textarea::placeholder{color:var(--text3);opacity:1}",
