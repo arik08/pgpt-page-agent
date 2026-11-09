@@ -4,6 +4,7 @@
 - GET  /agent.js    북마클릿이 불러가는 위젯
 - GET  /panel       새 창(팝업) 모드 — 페이지에 직접 붙일 수 없는 사이트용
 - GET  /demo        시험용 예시 페이지
+- GET  /motions     모션 10가지를 나란히 보고 고르는 페이지
 - GET  /api/health  상태
 - POST /api/chat    질문 → SSE 스트림
 """
@@ -12,6 +13,7 @@ from __future__ import annotations
 
 import html
 import json
+import os
 import re
 import time
 from contextlib import asynccontextmanager
@@ -121,6 +123,7 @@ def render_template(name: str, request: Request) -> HTMLResponse:
         "SHARED": "같은 망에 공개" if settings.shared_on_lan else "이 PC에서만 (AGENT_HOST=127.0.0.1)",
         "SHARED_FLAG": "yes" if settings.shared_on_lan else "no",
         "VERSION": VERSION,
+        "MOTION": default_motion(),
     }
     for key, value in values.items():
         page = page.replace("{{" + key + "}}", html.escape(value, quote=True))
@@ -144,10 +147,31 @@ async def demo(request: Request):
     return render_template("demo.html", request)
 
 
+# 모션 테마: 앞의 것이 기본. 파일은 web/motions/ 아래 (core → molten → themes 순으로 붙인다).
+MOTIONS = ["molten", "ferro", "mercury", "plasma", "bubble", "gyro", "swarm", "wave", "eclipse", "crystal"]
+MOTION_FILES = ["motions/core.js", "motions/molten.js", "motions/themes.js"]
+
+
+def default_motion() -> str:
+    """.env의 AGENT_MOTION. 모르는 이름이면 쇳물 방울."""
+    name = os.environ.get("AGENT_MOTION", "").strip().lower()
+    return name if name in MOTIONS else MOTIONS[0]
+
+
+@app.get("/motions", response_class=HTMLResponse)
+async def motions(request: Request):
+    return render_template("motions.html", request)
+
+
 @app.get("/agent.js")
-async def agent_js():
-    code = (WEB / "icons.js").read_text(encoding="utf-8") + "\n" + (WEB / "agent.js").read_text(encoding="utf-8")
-    return Response(code, media_type="application/javascript; charset=utf-8", headers=NO_CACHE)
+async def agent_js(m: str = ""):
+    # m: 북마클릿에 넣어 둔 개인 선택 (/agent.js?m=ferro). 없으면 서버 기본값만 알려 준다.
+    head = "window.__pageAgentMotionDefault=" + json.dumps(default_motion()) + ";\n"
+    m = m.split("?")[0]   # 북마클릿이 뒤에 ?ts= 를 붙이는 경우
+    if m in MOTIONS:
+        head += "window.__pageAgentMotion=" + json.dumps(m) + ";\n"
+    parts = [(WEB / name).read_text(encoding="utf-8") for name in ["icons.js", *MOTION_FILES, "agent.js"]]
+    return Response(head + "\n".join(parts), media_type="application/javascript; charset=utf-8", headers=NO_CACHE)
 
 
 @app.get("/api/health")
