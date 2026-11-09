@@ -119,6 +119,7 @@ def render_template(name: str, request: Request) -> HTMLResponse:
         "MODEL": settings.model,
         "WEB_SEARCH": "켜짐" if settings.web_search else "꺼짐",
         "SHARED": "같은 망에 공개" if settings.shared_on_lan else "이 PC에서만 (AGENT_HOST=127.0.0.1)",
+        "SHARED_FLAG": "yes" if settings.shared_on_lan else "no",
         "VERSION": VERSION,
     }
     for key, value in values.items():

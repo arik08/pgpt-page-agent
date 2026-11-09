@@ -16,6 +16,7 @@
     margin: 0; background: var(--bg); color: var(--text);
     font-family: "Pretendard Variable", Pretendard, "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", system-ui, sans-serif;
     font-size: 1rem; line-height: 1.7; -webkit-font-smoothing: antialiased;
+    word-break: keep-all; overflow-wrap: anywhere;
   }
   ::selection { background: rgba(240,106,22,.38); color: #fff; }
   a { color: #ffb36b; text-underline-offset: 3px; text-decoration-color: rgba(255,179,107,.45); }
@@ -62,6 +63,8 @@
   dl.info dd { margin: 0; font-variant-numeric: tabular-nums; word-break: break-all; }
   .addr { display: flex; flex-wrap: wrap; gap: .5rem .75rem; align-items: center; }
   .addr code { font-family: D2Coding, Consolas, monospace; font-size: .9375rem; }
+  dl.info[data-shared="yes"] .share-off, dl.info[data-shared="no"] .share-on { display: none; }
+  dl.info .share-off { color: var(--text2); }
   ul.keys { margin: 0; padding-left: 1.25rem; color: var(--text2); }
   ul.keys li { margin: .25rem 0; }
   .toast { position: fixed; left: 50%; bottom: 2rem; transform: translate(-50%, 1rem); opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
@@ -84,7 +87,7 @@
     <li>
       <div class="step-title">아래 버튼을 북마크바로 끌어다 놓습니다</div>
       <div class="bm-row">
-        <a class="bm" href="{{BOOKMARKLET}}" title="북마크바로 끌어다 놓으세요"><span class="bm-dot" aria-hidden="true"></span>페이지 에이전트</a>
+        <a class="bm" href="{{BOOKMARKLET}}"><span class="bm-dot" aria-hidden="true"></span>페이지 에이전트</a>
         <button class="btn" type="button" id="copy"><span data-icon="copy"></span>북마클릿 코드 복사</button>
       </div>
       <div class="step-body muted">끌어다 놓기가 안 되면 코드를 복사해 새 북마크의 URL 칸에 붙여 넣으세요.</div>
@@ -104,12 +107,13 @@
   <p class="step-body" style="margin:0">이 페이지 오른쪽 아래 방울을 눌러 보세요. 본문이 있는 페이지로 시험하려면 <a href="/demo">예시 페이지</a>에서 북마크를 누르면 됩니다.</p>
 
   <h2>이 서버</h2>
-  <dl class="info">
+  <dl class="info" data-shared="{{SHARED_FLAG}}">
     <dt>모델</dt><dd>{{MODEL}}</dd>
     <dt>연결 방식</dt><dd>{{PROVIDER}}</dd>
     <dt>웹 검색</dt><dd>{{WEB_SEARCH}}</dd>
     <dt>공개 범위</dt><dd>{{SHARED}}</dd>
-    <dt>동료에게 줄 주소</dt><dd class="addr"><code id="server">{{SERVER}}</code><button class="btn" type="button" id="copy-addr"><span data-icon="copy"></span>주소 복사</button></dd>
+    <dt>동료에게 줄 주소</dt><dd class="addr share-on"><code id="server">{{SERVER}}</code><button class="btn" type="button" id="copy-addr"><span data-icon="copy"></span>주소 복사</button></dd>
+    <dd class="share-off">지금은 이 PC에서만 열려 있어 동료가 접속할 수 없습니다. 같은 망에 공개하려면 <code>.env</code>에 <code>AGENT_HOST=0.0.0.0</code>을 넣고 서버를 다시 실행하세요.</dd>
   </dl>
 
   <h2>단축키</h2>

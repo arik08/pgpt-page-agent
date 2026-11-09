@@ -142,7 +142,7 @@
     "--text:#eee7e0;--text2:#b5aba2;--text3:#958b82;--heat:rgb(128,27,11);--heat-ui:rgb(225,80,18);--heat-k:.2;",
     "--font:'Pretendard Variable',Pretendard,'Malgun Gothic','맑은 고딕','Apple SD Gothic Neo',system-ui,-apple-system,'Segoe UI',sans-serif;",
     "--mono:D2Coding,'JetBrains Mono',Consolas,'Courier New',monospace;",
-    "font-family:var(--font);font-size:16px;line-height:1.7;color:var(--text);-webkit-font-smoothing:antialiased;letter-spacing:-.003em;text-align:left;font-weight:400}",
+    "font-family:var(--font);font-size:16px;line-height:1.7;color:var(--text);-webkit-font-smoothing:antialiased;letter-spacing:-.003em;text-align:left;font-weight:400;word-break:keep-all;overflow-wrap:anywhere}",
     ".root ::selection{background:rgba(240,106,22,.38);color:#fff}",
     "button{font:inherit;color:inherit;margin:0}",
     "svg.i{display:block;flex:none}",
@@ -160,7 +160,7 @@
     "background:var(--bg);border:1px solid var(--line);border-radius:20px;box-shadow:0 30px 70px -18px rgba(0,0,0,.6),0 12px 28px -10px rgba(0,0,0,.4);overflow:hidden;color:var(--text)}",
     ".panel.on{display:flex}",
     ".panel.xl{width:min(900px,calc(100vw - 48px));height:calc(100vh - 120px)}",
-    ".panel::before{content:'';position:absolute;left:20px;right:20px;top:0;height:1px;z-index:3;pointer-events:none;",
+    ".panel::before{content:'';position:absolute;left:20px;right:20px;top:0;height:2px;z-index:3;pointer-events:none;box-shadow:0 1px calc(4px + var(--heat-k) * 16px) var(--heat-ui);",
     "background:linear-gradient(90deg,transparent,var(--heat-ui) 28%,var(--heat-ui) 72%,transparent);opacity:calc(.22 + var(--heat-k) * .78);transition:opacity .3s}",
     ".panel.flare::before{opacity:1;left:0;right:0;transition:none}",
     ".rim{position:absolute;inset:0;pointer-events:none;z-index:6}",
@@ -178,12 +178,15 @@
     ".ib[disabled]{opacity:.4;pointer-events:none}",
 
     /* 대화 목록 */
-    ".list{flex:1;overflow-y:auto;overflow-x:hidden;padding:20px 20px 6px;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--bg4) transparent}",
-    ".list::-webkit-scrollbar{width:10px}.list::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:10px;border:3px solid var(--bg)}",
+    ".list{flex:1;overflow-y:auto;overflow-x:hidden;padding:20px 20px 6px;overscroll-behavior:contain}",
+    ".list::-webkit-scrollbar{width:10px}.list::-webkit-scrollbar-track{background:transparent}.list::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:10px;border:3px solid var(--bg)}.list::-webkit-scrollbar-button{display:none;width:0;height:0}",
+    "textarea::-webkit-scrollbar{width:8px}textarea::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:8px}textarea::-webkit-scrollbar-button{display:none;width:0;height:0}",
+    "@supports not selector(::-webkit-scrollbar){.list,textarea{scrollbar-width:thin;scrollbar-color:var(--bg4) transparent}}",
     ".panel.xl .list>*{max-width:760px;margin-left:auto;margin-right:auto}",
+    ".panel.xl .hd,.root.win .hd{padding-left:max(20px,calc((100% - 760px) / 2));padding-right:max(10px,calc((100% - 760px) / 2 - 10px))}",
     ".msg{margin:0 0 24px}",
     ".me{display:flex;flex-direction:column;align-items:flex-end}",
-    ".bubble{max-width:88%;background:var(--bg3);border:1px solid var(--line);border-radius:16px 16px 6px 16px;padding:9px 14px;white-space:pre-wrap;word-break:break-word;color:var(--text)}",
+    ".bubble{max-width:88%;background:var(--bg3);border:1px solid var(--line);border-radius:16px 16px 6px 16px;padding:9px 14px;white-space:pre-wrap;color:var(--text)}",
     ".me .tag{margin-top:6px;font-size:13px;line-height:1.4;color:var(--text3);display:flex;align-items:center;gap:5px}",
     ".me .tag svg.i{width:14px;height:14px}",
 
@@ -201,13 +204,13 @@
     ".sq svg.i{width:16px;height:16px;color:var(--text3)}",
     ".sq .q{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}",
     /* 검색어가 오기 전: 아지랑이가 지나가는 막대 */
-    ".sq.live .q{display:block;width:150px;height:10px;border-radius:5px;background:linear-gradient(90deg,var(--bg3) 0%,var(--bg3) 32%,rgba(255,170,80,.6) 50%,var(--bg3) 68%,var(--bg3) 100%);background-size:260% 100%;animation:pa-shimmer 1.4s linear infinite}",
+    ".sq.live .q{display:block;width:150px;height:10px;border-radius:5px;background:linear-gradient(90deg,var(--bg3) 0%,var(--bg3) 32%,color-mix(in srgb,var(--heat-ui) 75%,transparent) 50%,var(--bg3) 68%,var(--bg3) 100%);background-size:260% 100%;animation:pa-shimmer 1.4s linear infinite}",
     "@keyframes pa-shimmer{from{background-position:100% 0}to{background-position:-160% 0}}",
     ".sq.lit svg.i{color:var(--heat-ui);animation:pa-lit 1s ease-out}",
     "@keyframes pa-lit{from{color:#fff1d0;filter:drop-shadow(0 0 5px rgba(255,170,80,.95))}}",
 
     /* 답변 본문 */
-    ".md{word-break:break-word;color:var(--text)}",
+    ".md{color:var(--text)}",
     ".md>.lv{display:contents}",
     ".md p{margin:0 0 12px}",
     ".md h1,.md h2,.md h3,.md h4{font-size:17px;font-weight:700;margin:18px 0 8px;line-height:1.45;letter-spacing:-.01em;color:#fff6ee}",
@@ -222,10 +225,10 @@
     ".md table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.55}",
     ".md th,.md td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top;font-variant-numeric:tabular-nums}",
     ".md th{color:var(--text2);font-weight:600;background:var(--bg2)}.md tr:last-child td{border-bottom:0}",
-    ".md a{color:#ffb36b;text-decoration:underline;text-decoration-color:rgba(255,179,107,.4);text-underline-offset:3px}",
+    ".md a{color:color-mix(in srgb,var(--heat-ui) 52%,#fff);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--heat-ui) 60%,transparent);text-underline-offset:3px}",
     ".md a:hover{text-decoration-color:currentColor}",
-    ".md a.cite{text-decoration:none;font-size:13px;line-height:1.5;padding:1px 8px;border-radius:999px;background:rgba(255,143,43,.12);color:#ffc994;margin:0 1px;white-space:nowrap}",
-    ".md a.cite:hover{background:rgba(255,143,43,.2)}",
+    ".md a.cite{text-decoration:none;font-size:13px;line-height:1.5;padding:1px 8px;border-radius:999px;background:color-mix(in srgb,var(--heat-ui) 16%,transparent);color:color-mix(in srgb,var(--heat-ui) 42%,#fff);margin:0 1px;white-space:nowrap}",
+    ".md a.cite:hover{background:color-mix(in srgb,var(--heat-ui) 28%,transparent)}",
     ".md hr{border:0;border-top:1px solid var(--line);margin:16px 0}",
     ".md strong{font-weight:700;color:#fff6ee}",
     ".hot{-webkit-background-clip:text;background-clip:text;color:transparent}",
@@ -243,10 +246,10 @@
     ".tools .ib{width:34px;height:34px}.tools svg.i{width:18px;height:18px}",
 
     /* 오류 */
-    ".err{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border:1px solid rgba(229,72,77,.32);background:rgba(229,72,77,.08);border-radius:12px;color:#ffdcd8;font-size:15px;line-height:1.6;margin-top:4px}",
-    ".err>svg.i{color:#ff8a80;margin-top:3px;width:18px;height:18px}",
+    ".err{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border:1px solid rgba(182,39,14,.6);background:rgba(62,56,52,.32);border-radius:12px;color:#f1e4dc;font-size:15px;line-height:1.6;margin-top:4px}",
+    ".err>svg.i{color:rgb(232,96,30);margin-top:3px;width:18px;height:18px}",
     ".err-body{flex:1;min-width:0}",
-    ".err-detail{font-size:13px;color:#dcaaa4;margin-top:4px;word-break:break-word}",
+    ".err-detail{font-size:13px;color:#bfb2a8;margin-top:4px}",
     ".err-acts{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}",
     ".btn{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:10px;border:1px solid var(--line2);background:var(--bg3);color:var(--text);font-size:14px;cursor:pointer;transition:background .15s}",
     ".btn:hover{background:var(--bg4)}.btn svg.i{width:16px;height:16px}",
@@ -268,25 +271,25 @@
     ".chip{display:inline-flex;align-items:center;gap:6px;max-width:100%;height:30px;padding:0 10px;font-size:13px;line-height:1;color:var(--text2);background:var(--bg2);border:1px solid var(--line);border-radius:8px}",
     ".chip svg.i{width:15px;height:15px}",
     ".chip span{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:250px;line-height:1.4}",
-    ".chip.sel{color:#ffd3a8;border-color:rgba(255,143,43,.32);background:rgba(255,143,43,.08);padding-right:3px}",
+    ".chip.sel{color:color-mix(in srgb,var(--heat-ui) 40%,#fff);border-color:color-mix(in srgb,var(--heat-ui) 45%,transparent);background:color-mix(in srgb,var(--heat-ui) 10%,transparent);padding-right:3px}",
     ".chip .x{width:24px;height:24px;border-radius:6px;display:grid;place-items:center;border:0;background:transparent;color:inherit;cursor:pointer}",
-    ".chip .x:hover{background:rgba(255,143,43,.16)}.chip .x svg.i{width:14px;height:14px}",
+    ".chip .x:hover{background:color-mix(in srgb,var(--heat-ui) 22%,transparent)}.chip .x svg.i{width:14px;height:14px}",
     ".chip.flash{animation:pa-chip .8s ease-out}",
     "@keyframes pa-chip{from{border-color:rgba(255,200,110,.95);box-shadow:0 0 0 3px rgba(255,143,43,.2);color:#ffe6b0}}",
     ".field{display:flex;align-items:flex-end;gap:8px;background:var(--bg2);border:1px solid var(--line2);border-radius:16px;padding:6px 6px 6px 14px;transition:border-color .2s,box-shadow .2s}",
-    ".field:focus-within{border-color:rgba(255,143,43,.5);box-shadow:0 0 0 3px rgba(255,143,43,.1)}",
+    ".field:focus-within{border-color:color-mix(in srgb,var(--heat-ui) 65%,transparent);box-shadow:0 0 0 3px color-mix(in srgb,var(--heat-ui) 14%,transparent)}",
     "textarea{flex:1;resize:none;border:0;outline:0;background:transparent;color:var(--text);font:inherit;font-size:16px;line-height:1.6;padding:6px 0;margin:0;",
-    "max-height:170px;min-height:38px;height:38px;caret-color:#ff9a3c;scrollbar-width:thin;scrollbar-color:var(--bg4) transparent}",
+    "max-height:170px;min-height:38px;height:38px;caret-color:var(--heat-ui)}",
     "textarea::placeholder{color:var(--text3);opacity:1}",
     ".send{width:38px;height:38px;flex:none;display:grid;place-items:center;border-radius:12px;border:0;cursor:pointer;background:var(--bg4);color:var(--text3);",
     "transition:background .25s,color .25s,transform .12s,box-shadow .25s}",
-    ".send.ready{background:var(--heat-ui);color:#1c0d04;box-shadow:0 6px 14px -6px rgba(0,0,0,.65)}",
+    ".send.ready{background:var(--heat-ui);color:#fff8ef;box-shadow:0 6px 14px -6px rgba(0,0,0,.65)}",
     ".send.stop{background:var(--bg4);color:var(--text)}",
     ".send:active{transform:scale(.88)}.send:focus-visible{outline:2px solid var(--heat-ui);outline-offset:2px}",
 
     /* 툴팁·효과 */
     ".tip{position:fixed;left:0;top:0;z-index:10;pointer-events:none;font-size:13px;line-height:1.4;color:var(--text);background:#2b2622;border:1px solid var(--line2);",
-    "padding:6px 10px;border-radius:8px;box-shadow:0 10px 24px -8px rgba(0,0,0,.55);opacity:0;transition:opacity .12s;white-space:nowrap}",
+    "padding:6px 10px;border-radius:8px;box-shadow:0 10px 24px -8px rgba(0,0,0,.55);opacity:0;transition:opacity .12s;max-width:320px;white-space:normal;overflow-wrap:anywhere}",
     ".tip.on{opacity:1}",
     ".fx{position:fixed;left:0;top:0;pointer-events:none;z-index:4}",
     ".scan{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden;display:none}",
@@ -304,6 +307,7 @@
     ".root.win .orb svg.blob{left:-22px;top:-22px;width:88px;height:88px}",
     ".root.win .list>*,.root.win .composer>*{max-width:760px;margin-left:auto;margin-right:auto}",
 
+    "@media (pointer:coarse){.ib,.send{width:44px;height:44px}.chip .x{width:32px;height:32px}}",
     "@media (max-width:520px){.panel{right:12px;left:12px;width:auto;bottom:88px;height:calc(100vh - 104px)}.panel.xl{width:auto;height:calc(100vh - 104px)}.orb{right:16px;bottom:16px}}",
     "@media (prefers-reduced-motion:reduce){.cast{animation-duration:.01ms}.bead{animation:none}.sq.live .q{animation:none}",
     ".orb.unread .ping{animation:none;opacity:.85;transform:scale(1.2)}.chip.flash{animation-duration:.01ms}}"
@@ -366,7 +370,7 @@
     defs.appendChild(halo);
     var shade = sv("radialGradient", { id: id("shade"), gradientUnits: "userSpaceOnUse", cx: "57", cy: "55", r: "30" }, [
       sv("stop", { offset: "0.6", "stop-color": "#000", "stop-opacity": "0" }),
-      sv("stop", { offset: "1", "stop-color": "#000", "stop-opacity": "0.42" })
+      sv("stop", { offset: "1", "stop-color": "#000", "stop-opacity": "0.52" })
     ]);
     defs.appendChild(shade);
 
@@ -385,6 +389,8 @@
     svg.appendChild(defs);
 
     O.root = sv("g");
+    O.ground = sv("ellipse", { cx: "61", cy: "88", rx: "19", ry: "4.5", fill: "#000", filter: url("soft") });
+    O.root.appendChild(O.ground);
     O.halo = sv("circle", { cx: "60", cy: "60", r: "40", fill: url("halo") });
     O.root.appendChild(O.halo);
     var inner = sv("g", { mask: url("shape") });
@@ -483,7 +489,7 @@
     if (Math.abs(P.T - lastCss.T) > 0.006) {
       lastCss.T = P.T;
       root.style.setProperty("--heat", rgb(heat(P.T)));
-      root.style.setProperty("--heat-ui", rgb(heat(clamp(P.T + 0.18, 0.5, 0.9))));
+      root.style.setProperty("--heat-ui", rgb(heat(clamp(P.T + 0.18, 0.28, 0.9))));
       root.style.setProperty("--heat-k", P.T.toFixed(3));
     }
   }
@@ -507,7 +513,7 @@
       L.el.setAttribute("r", (L.r + 1.5 * Math.sin(t * 1.7 + L.ph)).toFixed(2));
     }
 
-    var hot = heat(T + 0.16), mid = heat(T), rim = heat(T - 0.17);
+    var hot = heat(T + 0.21), mid = heat(T), rim = heat(T - 0.24);
     O.stops[0].setAttribute("stop-color", rgb(hot));
     O.stops[1].setAttribute("stop-color", rgb(mid));
     O.stops[2].setAttribute("stop-color", rgb(rim));
@@ -533,6 +539,7 @@
     O.spec2.setAttribute("cx", (sx - 3).toFixed(2)); O.spec2.setAttribute("cy", (sy - 2).toFixed(2));
     O.spec2.setAttribute("opacity", Math.min(1, specA * 1.4).toFixed(3));
 
+    O.ground.setAttribute("opacity", (0.3 - 0.16 * T).toFixed(3));
     var hc = heat(T + 0.04);
     O.halo.setAttribute("r", (31 + 24 * T).toFixed(2));
     O.haloStops[0].setAttribute("stop-color", rgb(hc));
@@ -856,7 +863,7 @@
         last = re.lastIndex;
         if (m[1]) {
           var cu = safeUrl(m[3]);
-          frag.appendChild(cu ? h("a", { class: "cite", href: cu, target: "_blank", rel: "noopener noreferrer", title: cleanUrl(cu) }, m[2].replace(/^www\./, "")) : D.createTextNode(m[0]));
+          frag.appendChild(cu ? h("a", { class: "cite", href: cu, target: "_blank", rel: "noopener noreferrer", "data-tip": cleanUrl(cu) }, m[2].replace(/^www\./, "")) : D.createTextNode(m[0]));
         } else if (m[4]) {
           var u = safeUrl(m[6]);
           frag.appendChild(u ? h("a", { href: u, target: "_blank", rel: "noopener noreferrer" }, inline(m[5])) : D.createTextNode(m[0]));
@@ -1012,13 +1019,20 @@
     }
     return allDone && !liveSrc;
   };
-  /* 쓰이는 중인 문단의 닫히지 않은 **, ` 를 임시로 닫아 기호가 그대로 보이지 않게 한다. */
+  /* 쓰이는 중인 문단의 닫히지 않은 `, **, * 를 임시로 닫아 기호가 그대로 보이지 않게 한다.
+     순서: 끝에 홀로 온 * 제거 → 굵게 닫기 → 기울임 닫기. 줄 머리의 "* " 목록 기호는 세지 않는다. */
   function closeOpenMarks(src) {
     if (/^\s*(```|~~~)/.test(src)) return src;
     var noCode = src.replace(/`[^`\n]*`/g, "");
     if ((noCode.match(/`/g) || []).length % 2) return src + "`";
+    if (/(^|[^*])\*$/.test(src)) { src = src.slice(0, -1); noCode = noCode.slice(0, -1); }
     var bold = (noCode.match(/\*\*/g) || []).length;
-    if (bold % 2) return /\*\*\s*$/.test(src) ? src.replace(/\*\*\s*$/, "") : src + "**";
+    if (bold % 2) {
+      if (/\*\*\s*$/.test(src)) return src.replace(/\*\*\s*$/, "");
+      src += "**"; noCode += "**";
+    }
+    var single = (noCode.replace(/^\s*\*\s/gm, "").replace(/\*\*/g, "").match(/\*/g) || []).length;
+    if (single % 2) src += "*";
     return src;
   }
   function ageAt(arr, idx, t) {
@@ -1167,7 +1181,7 @@
     if (!m.sources || !m.sources.length) return;
     var box = h("div", { class: "sources" });
     m.sources.slice(0, 8).forEach(function (s, i) {
-      var a = h("a", { class: "src", href: s.url, target: "_blank", rel: "noopener noreferrer", title: cleanUrl(s.url) },
+      var a = h("a", { class: "src", href: s.url, target: "_blank", rel: "noopener noreferrer", "data-tip": (s.title ? s.title + " · " : "") + cleanUrl(s.url) },
         [h("b", { text: String(i + 1) }), h("span", { text: (hostOf(s.url).replace(/^www\./, "")) + (s.title ? " · " + s.title : "") })]);
       box.appendChild(a);
       if (animate && !REDUCED && a.animate) {
@@ -1323,6 +1337,7 @@
     var am = { role: "assistant", content: "", sources: [], searches: [], pending: true };
     state.messages.push(am);
     var v = assistantView(am);
+    v.el.setAttribute("aria-busy", "true");
     am.view = v;
     var live = new LiveText(v.md);
     var cur = { am: am, v: v, live: live, ctrl: W.AbortController ? new AbortController() : null, started: now(), searching: 0, searchCount: 0, finished: false };
@@ -1420,7 +1435,7 @@
         }
         break;
       case "delta":
-        if (P.phase !== "answering") { setPhase("answering"); seg(v, "answer"); setLabel(v, ""); }
+        if (P.phase !== "answering") { setPhase("answering"); seg(v, "answer"); setLabel(v, "답변하는 중"); }
         am.content += ev.text;
         cur.live.push(ev.text);
         if (!REDUCED) { kick(0.012); P.vsy += 0.18; }
@@ -1448,6 +1463,7 @@
   }
   function wrapUp(cur) {
     cur.finished = true;
+    cur.v.el.removeAttribute("aria-busy");
     if (state.current === cur) state.current = null;
     closeSegs(cur);
     cur.live.end();
@@ -1528,10 +1544,11 @@
       renderChips();
       if (!REDUCED) Array.prototype.forEach.call(box.querySelectorAll(".empty-title,.empty-sub,.sug"), function (el, i) { cast(el, i * 70); });
       ta.focus();
+      // 녹아내린 쇳물을 방울이 받아 삼킨다
+      kick(0.22, 1.6);
+      if (nodes.length) fxSparks(14, c.x, c.y - 8, { speed: 240 });
     };
-    kick(0.22, 1.6);
     if (REDUCED || !nodes.length || !nodes[0].animate) { finishClear(); return; }
-    fxSparks(14, c.x, c.y - 8, { speed: 240 });
     var anims = nodes.reverse().map(function (el, i) {
       el.classList.add("melt");
       return el.animate([
@@ -1731,7 +1748,7 @@
     frameN++;
     stepOrb(dt, t);
     var calm = P.phase === "idle" && !P.hover && !P.pressed && !FX.parts.length && Math.abs(P.vsx) + Math.abs(P.vsy) + Math.abs(P.vsly) < 0.05 && !state.busy;
-    if (!calm || frameN % 2 === 0) drawOrb();
+    if (!calm || frameN % 3 === 0) drawOrb();
     fxStep(dt);
     var cur = state.current;
     if (cur && !cur.finished) tickSegs(cur.v, t);
