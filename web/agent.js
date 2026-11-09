@@ -139,7 +139,7 @@
     ":host{all:initial}",
     "*,*::before,*::after{box-sizing:border-box}",
     ".root{--bg:#141210;--bg2:#1b1815;--bg3:#25211d;--bg4:#312b26;--line:rgba(238,226,214,.09);--line2:rgba(238,226,214,.17);",
-    "--text:#eee7e0;--text2:#b5aba2;--text3:#958b82;--heat:rgb(128,27,11);--heat-ui:rgb(225,80,18);--heat-k:.2;",
+    "--text:#eee7e0;--text2:#b5aba2;--text3:#958b82;--heat:rgb(128,27,11);--heat-ui:rgb(225,80,18);--heat-ink:#1c0d04;--heat-k:.2;",
     "--font:'Pretendard Variable',Pretendard,'Malgun Gothic','맑은 고딕','Apple SD Gothic Neo',system-ui,-apple-system,'Segoe UI',sans-serif;",
     "--mono:D2Coding,'JetBrains Mono',Consolas,'Courier New',monospace;",
     "font-family:var(--font);font-size:16px;line-height:1.7;color:var(--text);-webkit-font-smoothing:antialiased;letter-spacing:-.003em;text-align:left;font-weight:400;word-break:keep-all;overflow-wrap:anywhere}",
@@ -283,7 +283,7 @@
     "textarea::placeholder{color:var(--text3);opacity:1}",
     ".send{width:38px;height:38px;flex:none;display:grid;place-items:center;border-radius:12px;border:0;cursor:pointer;background:var(--bg4);color:var(--text3);",
     "transition:background .25s,color .25s,transform .12s,box-shadow .25s}",
-    ".send.ready{background:var(--heat-ui);color:#fff8ef;box-shadow:0 6px 14px -6px rgba(0,0,0,.65)}",
+    ".send.ready{background:var(--heat-ui);color:var(--heat-ink);box-shadow:0 6px 14px -6px rgba(0,0,0,.65)}",
     ".send.stop{background:var(--bg4);color:var(--text)}",
     ".send:active{transform:scale(.88)}.send:focus-visible{outline:2px solid var(--heat-ui);outline-offset:2px}",
 
@@ -489,7 +489,11 @@
     if (Math.abs(P.T - lastCss.T) > 0.006) {
       lastCss.T = P.T;
       root.style.setProperty("--heat", rgb(heat(P.T)));
-      root.style.setProperty("--heat-ui", rgb(heat(clamp(P.T + 0.18, 0.28, 0.9))));
+      // 하한 0.36: 담금질(오류) 중에도 흑연 위에서 3:1 이상
+      var ui = clamp(P.T + 0.18, 0.36, 0.9);
+      root.style.setProperty("--heat-ui", rgb(heat(ui)));
+      // Ink Flip: heat-045보다 뜨거운 채움 위에는 먹색 글자, 차가운 채움 위에는 밝은 글자
+      root.style.setProperty("--heat-ink", ui >= 0.45 ? "#1c0d04" : "#fff8ef");
       root.style.setProperty("--heat-k", P.T.toFixed(3));
     }
   }
