@@ -1,0 +1,791 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-10T01:10:53+09:00",
+  "title": "Design System: 페이지 에이전트",
+  "extensions": {
+    "colorMeta": {
+      "heat-000": {
+        "role": "primary",
+        "displayName": "식은 쇠",
+        "canonical": "rgb(62,56,52)",
+        "rampPosition": 0.0,
+        "tonalRamp": [
+          "#0d0b09",
+          "#282422",
+          "#46413e",
+          "#66605c",
+          "#87817d",
+          "#a9a4a0",
+          "#cdc8c5",
+          "#f1eeeb"
+        ]
+      },
+      "heat-010": {
+        "role": "primary",
+        "displayName": "검붉음",
+        "canonical": "rgb(78,19,10)",
+        "rampPosition": 0.1,
+        "tonalRamp": [
+          "#190402",
+          "#3c1a14",
+          "#62332a",
+          "#8a4e43",
+          "#af6f63",
+          "#cd958a",
+          "#ebbdb3",
+          "#ffe9e4"
+        ]
+      },
+      "heat-020": {
+        "role": "primary",
+        "displayName": "짙은 체리",
+        "canonical": "rgb(128,27,11)",
+        "rampPosition": 0.2,
+        "tonalRamp": [
+          "#1e0100",
+          "#460f07",
+          "#70271b",
+          "#9c4030",
+          "#c36250",
+          "#df8c7b",
+          "#fbb5a7",
+          "#ffe9e4"
+        ]
+      },
+      "heat-032": {
+        "role": "primary",
+        "displayName": "체리",
+        "canonical": "rgb(182,39,14)",
+        "rampPosition": 0.32,
+        "tonalRamp": [
+          "#1d0200",
+          "#490902",
+          "#7b1403",
+          "#ac2c16",
+          "#d4523c",
+          "#ef816c",
+          "#feb4a4",
+          "#fee9e4"
+        ]
+      },
+      "heat-045": {
+        "role": "primary",
+        "displayName": "밝은 체리",
+        "canonical": "rgb(219,67,15)",
+        "rampPosition": 0.45,
+        "tonalRamp": [
+          "#1c0300",
+          "#460f01",
+          "#752106",
+          "#aa3106",
+          "#d84e26",
+          "#f37f5f",
+          "#ffb49f",
+          "#fee9e3"
+        ]
+      },
+      "heat-058": {
+        "role": "primary",
+        "displayName": "주황",
+        "canonical": "rgb(241,107,22)",
+        "rampPosition": 0.58,
+        "tonalRamp": [
+          "#180500",
+          "#401702",
+          "#6d2b03",
+          "#9b430d",
+          "#d15801",
+          "#ec8653",
+          "#ffb694",
+          "#feeae0"
+        ]
+      },
+      "heat-070": {
+        "role": "primary",
+        "displayName": "밝은 주황",
+        "canonical": "rgb(255,145,44)",
+        "rampPosition": 0.7,
+        "tonalRamp": [
+          "#160700",
+          "#3b1c01",
+          "#653302",
+          "#904d0b",
+          "#bf6913",
+          "#e18f4d",
+          "#fdb886",
+          "#feeadc"
+        ]
+      },
+      "heat-082": {
+        "role": "primary",
+        "displayName": "노랑",
+        "canonical": "rgb(255,192,94)",
+        "rampPosition": 0.82,
+        "tonalRamp": [
+          "#120900",
+          "#342101",
+          "#593b05",
+          "#825805",
+          "#ac760c",
+          "#ca9c56",
+          "#e8c28c",
+          "#ffebd1"
+        ]
+      },
+      "heat-092": {
+        "role": "primary",
+        "displayName": "볏짚",
+        "canonical": "rgb(255,229,170)",
+        "rampPosition": 0.92,
+        "tonalRamp": [
+          "#110a00",
+          "#2f2304",
+          "#504017",
+          "#735e2b",
+          "#96804d",
+          "#b6a379",
+          "#d7c8a5",
+          "#f9eed3"
+        ]
+      },
+      "heat-100": {
+        "role": "primary",
+        "displayName": "흰빛",
+        "canonical": "rgb(255,249,236)",
+        "rampPosition": 1.0,
+        "tonalRamp": [
+          "#0d0b07",
+          "#27251f",
+          "#45423a",
+          "#656157",
+          "#878277",
+          "#a9a59b",
+          "#ccc9c1",
+          "#f1eee8"
+        ]
+      },
+      "bg": {
+        "role": "neutral",
+        "displayName": "흑연 바탕",
+        "canonical": "#141210",
+        "tonalRamp": [
+          "#0c0b0a",
+          "#262523",
+          "#434240",
+          "#63615e",
+          "#84827f",
+          "#a7a4a2",
+          "#cac9c7",
+          "#efeeed"
+        ]
+      },
+      "bg2": {
+        "role": "neutral",
+        "displayName": "그을음",
+        "canonical": "#1b1815",
+        "tonalRamp": [
+          "#0c0b0a",
+          "#272523",
+          "#44413f",
+          "#64605d",
+          "#85827e",
+          "#a7a4a1",
+          "#cbc9c6",
+          "#f0eeec"
+        ]
+      },
+      "bg3": {
+        "role": "neutral",
+        "displayName": "재",
+        "canonical": "#25211d",
+        "tonalRamp": [
+          "#0c0b09",
+          "#272522",
+          "#45413e",
+          "#65605c",
+          "#86817d",
+          "#a8a4a0",
+          "#ccc8c5",
+          "#f0eeeb"
+        ]
+      },
+      "bg4": {
+        "role": "neutral",
+        "displayName": "슬래그",
+        "canonical": "#312b26",
+        "tonalRamp": [
+          "#0d0b09",
+          "#282421",
+          "#46413d",
+          "#66605b",
+          "#88817b",
+          "#aaa49f",
+          "#cdc8c4",
+          "#f1eeeb"
+        ]
+      },
+      "float": {
+        "role": "neutral",
+        "displayName": "떠 있는 재",
+        "canonical": "#2b2622",
+        "tonalRamp": [
+          "#0d0b09",
+          "#272422",
+          "#45413e",
+          "#65605c",
+          "#87817d",
+          "#a9a4a0",
+          "#ccc8c5",
+          "#f1eeeb"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "헤어라인",
+        "canonical": "rgba(238,226,214,.09)",
+        "tonalRamp": [
+          "#0e0a07",
+          "#29241f",
+          "#484139",
+          "#695f56",
+          "#8a8076",
+          "#aca39b",
+          "#cfc8c1",
+          "#f3ede8"
+        ]
+      },
+      "line2": {
+        "role": "neutral",
+        "displayName": "진한 헤어라인",
+        "canonical": "rgba(238,226,214,.17)",
+        "tonalRamp": [
+          "#0e0a07",
+          "#29241f",
+          "#484139",
+          "#695f56",
+          "#8a8076",
+          "#aca39b",
+          "#cfc8c1",
+          "#f3ede8"
+        ]
+      },
+      "text-strong": {
+        "role": "neutral",
+        "displayName": "주괴 흰빛",
+        "canonical": "#fff6ee",
+        "tonalRamp": [
+          "#0d0b08",
+          "#282421",
+          "#46413c",
+          "#67605a",
+          "#88817a",
+          "#aaa49e",
+          "#cdc8c3",
+          "#f2eeea"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "본문",
+        "canonical": "#eee7e0",
+        "tonalRamp": [
+          "#0d0b09",
+          "#282421",
+          "#45413d",
+          "#66605b",
+          "#87817b",
+          "#a9a49f",
+          "#ccc8c4",
+          "#f1eeeb"
+        ]
+      },
+      "text2": {
+        "role": "neutral",
+        "displayName": "보조",
+        "canonical": "#b5aba2",
+        "tonalRamp": [
+          "#0e0b08",
+          "#292420",
+          "#47413b",
+          "#686058",
+          "#898179",
+          "#aba39d",
+          "#cec8c2",
+          "#f2ede9"
+        ]
+      },
+      "text3": {
+        "role": "neutral",
+        "displayName": "흐림",
+        "canonical": "#958b82",
+        "tonalRamp": [
+          "#0e0a08",
+          "#292420",
+          "#47413b",
+          "#685f58",
+          "#8a8078",
+          "#aba39c",
+          "#cec8c2",
+          "#f2ede9"
+        ]
+      },
+      "ink-on-heat": {
+        "role": "neutral",
+        "displayName": "쇳물 위 먹",
+        "canonical": "#1c0d04",
+        "tonalRamp": [
+          "#100a06",
+          "#2d231c",
+          "#4d3f36",
+          "#6f5d52",
+          "#917e72",
+          "#b2a197",
+          "#d4c6bd",
+          "#f7ece6"
+        ]
+      },
+      "selection": {
+        "role": "primary",
+        "displayName": "선택",
+        "canonical": "rgba(240,106,22,.38)",
+        "tonalRamp": [
+          "#180500",
+          "#401702",
+          "#6d2b03",
+          "#9e4101",
+          "#d15804",
+          "#ec8654",
+          "#ffb694",
+          "#feeae0"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "설치 페이지 h1에만. 34rem 이하에서 1.875rem."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "위젯의 가장 큰 글자. 빈 상태 인사."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "답변 안 제목(h2~h4). 답변 안 h1은 19px."
+      },
+      "panel-title": {
+        "displayName": "Panel title",
+        "purpose": "패널 머리의 이름."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "답변 본문, 말풍선, 입력창(줄 간격 1.6), 설치 페이지 본문(1rem)."
+      },
+      "body-small": {
+        "displayName": "Body small",
+        "purpose": "빈 상태 부제, 제안 버튼, 오류 메시지."
+      },
+      "data": {
+        "displayName": "Data",
+        "purpose": "표, 검색 줄, 보조 버튼. 숫자는 tabular-nums."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "인라인 코드와 코드 블록."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "패널 부제, 칩, 출처, 공정 기록 문구, 툴팁, 안내. 13px이 바닥이다."
+      }
+    },
+    "shadows": [
+      {
+        "name": "panel",
+        "value": "0 30px 70px -18px rgba(0,0,0,.6), 0 12px 28px -10px rgba(0,0,0,.4)",
+        "purpose": "호스트 페이지 위에 뜬 대화 패널."
+      },
+      {
+        "name": "float",
+        "value": "0 10px 24px -8px rgba(0,0,0,.55)",
+        "purpose": "툴팁 같은 작은 떠 있는 판."
+      },
+      {
+        "name": "lift",
+        "value": "0 6px 14px -6px rgba(0,0,0,.65)",
+        "purpose": "보내기 준비처럼 들린 버튼."
+      },
+      {
+        "name": "rim-heat",
+        "value": "0 1px calc(4px + var(--heat-k) * 16px) var(--heat-ui)",
+        "purpose": "패널 윗선 2px의 열빛. 높이가 아니라 온도. 쇳물 전용."
+      },
+      {
+        "name": "bead-heat",
+        "value": "0 0 10px 2px rgba(255,143,43,.5)",
+        "purpose": "답 끝 녹은 구슬 커서의 열빛. 쇳물 전용."
+      }
+    ],
+    "motion": [
+      {
+        "name": "heat-rate-up",
+        "value": "1 - exp(-2.6 * dt)",
+        "purpose": "데워짐. 목표 온도가 더 높을 때의 1차 지연(초당 2.6)."
+      },
+      {
+        "name": "heat-rate-cool",
+        "value": "1 - exp(-0.42 * dt)",
+        "purpose": "식음. 답이 끝난 뒤 몇 초에 걸쳐 천천히 식는다(초당 0.42)."
+      },
+      {
+        "name": "heat-rate-quench",
+        "value": "1 - exp(-9 * dt)",
+        "purpose": "오류 담금질. 순식간에 식은 쇠로(초당 9), 1.3초 뒤 다시 데워짐."
+      },
+      {
+        "name": "ease-settle",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "자리 잡기. 아이콘 교체, 상태 문구 넘김, 검색 줄·출처 칩 등장, 읽지 않음 고리."
+      },
+      {
+        "name": "spring-panel",
+        "value": "bakeSpring(150, 17) → linear(...); 미지원 시 cubic-bezier(.2,.9,.25,1.04) 480ms",
+        "purpose": "패널 확대·축소."
+      },
+      {
+        "name": "spring-drop",
+        "value": "bakeSpring(260, 13) → linear(...)",
+        "purpose": "첫 등장 방울의 떨어짐, 질문 말풍선이 떠오름."
+      },
+      {
+        "name": "hot-text",
+        "value": "900ms",
+        "purpose": "스트리밍 새 글자가 램프 0.62~1.0에서 본문색으로 식는 시간."
+      },
+      {
+        "name": "cast",
+        "value": "950ms cubic-bezier(.2,.7,.2,1), #ffcf8a에서 시작",
+        "purpose": "새로 놓인 조각(말풍선, 칩, 출처, 빈 상태, 패널 열기 때 글자)의 글자가 주황에서 식음."
+      },
+      {
+        "name": "duration-ui",
+        "value": "150ms",
+        "purpose": "hover 때 바탕·글자·테두리 색 전환."
+      },
+      {
+        "name": "tooltip-delay",
+        "value": "1000ms",
+        "purpose": "툴팁은 1초 머물러야 뜬다."
+      },
+      {
+        "name": "breath",
+        "value": "6s, 온도 ±0.032, 크기 ±2.2%",
+        "purpose": "대기·듣기 중 방울의 숨."
+      },
+      {
+        "name": "pulse",
+        "value": "2.2s, 온도 ±0.012",
+        "purpose": "활동 중 방울의 맥박."
+      },
+      {
+        "name": "press-scale",
+        "value": "아이콘 버튼 .9, 보내기 .88, 제안 .98",
+        "purpose": "누르는 동안의 눌림."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "에너지 0.05, 불티·열선·기울기·튕김·고리 끔, 패널 160ms 페이드",
+        "purpose": "prefers-reduced-motion. 온도 색은 남긴다."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "widget-narrow",
+        "value": "max-width: 520px"
+      },
+      {
+        "name": "coarse-pointer",
+        "value": "pointer: coarse"
+      },
+      {
+        "name": "install-narrow",
+        "value": "max-width: 34rem"
+      }
+    ],
+    "heat": {
+      "ramp": [
+        [
+          0.0,
+          "#3e3834"
+        ],
+        [
+          0.1,
+          "#4e130a"
+        ],
+        [
+          0.2,
+          "#801b0b"
+        ],
+        [
+          0.32,
+          "#b6270e"
+        ],
+        [
+          0.45,
+          "#db430f"
+        ],
+        [
+          0.58,
+          "#f16b16"
+        ],
+        [
+          0.7,
+          "#ff912c"
+        ],
+        [
+          0.82,
+          "#ffc05e"
+        ],
+        [
+          0.92,
+          "#ffe5aa"
+        ],
+        [
+          1.0,
+          "#fff9ec"
+        ]
+      ],
+      "cssVars": {
+        "--heat": "heat(T)",
+        "--heat-ui": "heat(clamp(T + 0.18, 0.28, 0.9))",
+        "--heat-k": "T"
+      },
+      "phaseFormat": "[목표 온도 T, 에너지 E]",
+      "phases": {
+        "idle": [
+          0.19,
+          0.14
+        ],
+        "listening": [
+          0.28,
+          0.3
+        ],
+        "reading": [
+          0.46,
+          0.5
+        ],
+        "thinking": [
+          0.62,
+          0.78
+        ],
+        "searching": [
+          0.72,
+          0.95
+        ],
+        "answering": [
+          0.86,
+          0.6
+        ],
+        "error": [
+          0.0,
+          0.3
+        ],
+        "unread": [
+          0.3,
+          null
+        ]
+      },
+      "segments": {
+        "read": 0.46,
+        "think": 0.62,
+        "search": 0.74,
+        "answer": 0.88
+      },
+      "snapshots": {
+        "heat-ui-idle": "#c4320e",
+        "heat-ui-listening": "#dd4610",
+        "heat-ui-searching": "#ffde9b"
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "쇳물 방울",
+      "kind": "custom",
+      "refersTo": "orb",
+      "description": "에이전트 자신. 대기 온도(T 0.19)의 정적 스냅샷이며, 실제 방울은 JS가 매 프레임 그리는 goo SVG다.",
+      "html": "<button class=\"ds-orb\" type=\"button\" aria-label=\"페이지 에이전트 열기\"><span class=\"ds-orb-halo\"></span><span class=\"ds-orb-body\"></span><span class=\"ds-orb-spec\"></span></button>",
+      "css": ".ds-orb{position:relative;width:60px;height:60px;margin:18px;border:0;padding:0;background:transparent;border-radius:50%;cursor:pointer;outline:none}.ds-orb-halo{position:absolute;inset:-16px;border-radius:50%;background:radial-gradient(circle,rgba(142,30,12,.26) 0%,rgba(142,30,12,.1) 45%,rgba(142,30,12,0) 72%)}.ds-orb-body{position:absolute;inset:5px;border-radius:50%;background:radial-gradient(circle at 46% 44%,#cd380f 0%,#7b1a0b 50%,#3e3834 100%);box-shadow:inset -5px -7px 12px rgba(0,0,0,.45);transition:transform .2s cubic-bezier(.16,1,.3,1)}.ds-orb-spec{position:absolute;left:18px;top:16px;width:9px;height:5px;border-radius:50%;background:rgba(255,255,255,.3);transform:rotate(-35deg)}.ds-orb:hover .ds-orb-body{transform:scale(1.045);background:radial-gradient(circle at 46% 44%,#e95c13 0%,#b6270e 50%,#4b1a12 100%)}.ds-orb:active .ds-orb-body{transform:scale(1.1,.88)}.ds-orb:focus-visible::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--heat-ui,#c4320e)}"
+    },
+    {
+      "name": "패널 머리",
+      "kind": "nav",
+      "refersTo": "panel-header",
+      "description": "패널 맨 위. 이름과 페이지 부제, 새 대화·확대·닫기 아이콘 버튼, 그리고 온도로 빛나는 윗선.",
+      "html": "<div class=\"ds-panel\"><div class=\"ds-panel-hd\"><div class=\"ds-panel-text\"><div class=\"ds-panel-name\">페이지 에이전트</div><div class=\"ds-panel-sub\">localhost:8787 · 제강 공정 한눈에 보기</div></div><div class=\"ds-panel-acts\"><button class=\"ds-panel-ib\" type=\"button\" aria-label=\"새 대화\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7\"/><path d=\"M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z\"/></svg></button><button class=\"ds-panel-ib\" type=\"button\" aria-label=\"창 확대\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M15 3h6v6\"/><path d=\"m21 3-7 7\"/><path d=\"m3 21 7-7\"/><path d=\"M9 21H3v-6\"/></svg></button><button class=\"ds-panel-ib\" type=\"button\" aria-label=\"닫기\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M18 6 6 18\"/><path d=\"m6 6 12 12\"/></svg></button></div></div></div>",
+      "css": ".ds-panel{position:relative;width:420px;max-width:100%;background:#141210;border:1px solid rgba(238,226,214,.09);border-radius:20px;overflow:hidden;box-shadow:0 30px 70px -18px rgba(0,0,0,.6),0 12px 28px -10px rgba(0,0,0,.4);color:#eee7e0;font-family:'Pretendard Variable',Pretendard,'Malgun Gothic','맑은 고딕','Apple SD Gothic Neo',system-ui,sans-serif;word-break:keep-all}.ds-panel::before{content:'';position:absolute;left:20px;right:20px;top:0;height:2px;pointer-events:none;background:linear-gradient(90deg,transparent,var(--heat-ui,#c4320e) 28%,var(--heat-ui,#c4320e) 72%,transparent);box-shadow:0 1px 7px var(--heat-ui,#c4320e);opacity:.37}.ds-panel-hd{display:flex;align-items:center;gap:10px;min-height:64px;padding:12px 10px 12px 20px;border-bottom:1px solid rgba(238,226,214,.09)}.ds-panel-text{flex:1;min-width:0}.ds-panel-name{font-size:16px;font-weight:650;line-height:1.35;letter-spacing:-.01em}.ds-panel-sub{font-size:13px;line-height:1.45;color:#b5aba2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ds-panel-acts{display:flex;gap:2px;flex:none}.ds-panel-ib{width:38px;height:38px;display:grid;place-items:center;border:0;background:transparent;color:#b5aba2;border-radius:10px;cursor:pointer;transition:background .15s,color .15s,transform .12s}.ds-panel-ib:hover{background:#25211d;color:#eee7e0}.ds-panel-ib:active{transform:scale(.9)}.ds-panel-ib:focus-visible{outline:2px solid var(--heat-ui,#c4320e);outline-offset:-2px}"
+    },
+    {
+      "name": "아이콘 버튼",
+      "kind": "button",
+      "refersTo": "icon-button",
+      "description": "패널 머리와 답변 도구 줄의 바탕 없는 아이콘 버튼. hover 때만 재 바탕이 깔린다.",
+      "html": "<div class=\"ds-ib-row\"><button class=\"ds-ib\" type=\"button\" aria-label=\"답변 복사\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect width=\"14\" height=\"14\" x=\"8\" y=\"8\" rx=\"2\" ry=\"2\"/><path d=\"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2\"/></svg></button></div>",
+      "css": ".ds-ib-row{display:inline-flex;padding:12px;background:#141210;border-radius:12px}.ds-ib{width:38px;height:38px;display:grid;place-items:center;border:0;background:transparent;color:#b5aba2;border-radius:10px;cursor:pointer;transition:background .15s,color .15s,transform .12s}.ds-ib:hover{background:#25211d;color:#eee7e0}.ds-ib:active{transform:scale(.9)}.ds-ib:focus-visible{outline:2px solid var(--heat-ui,#c4320e);outline-offset:-2px}.ds-ib[disabled]{opacity:.4;pointer-events:none}"
+    },
+    {
+      "name": "입력창과 보내기",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "그을음 바탕의 입력창. 포커스 때 열색 테두리와 흐림 없는 고리, 글을 쓰면 보내기가 --heat-ui로 데워진다.",
+      "html": "<div class=\"ds-composer\"><div class=\"ds-composer-field\"><textarea class=\"ds-composer-ta\" rows=\"1\" placeholder=\"이 페이지에 대해 물어보세요\" aria-label=\"질문 입력\"></textarea><button class=\"ds-send\" type=\"button\" aria-label=\"보내기\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 12 7-7 7 7\"/><path d=\"M12 19V5\"/></svg></button></div></div>",
+      "css": ".ds-composer{width:420px;max-width:100%;padding:10px 14px 14px;background:#141210;font-family:'Pretendard Variable',Pretendard,'Malgun Gothic','맑은 고딕','Apple SD Gothic Neo',system-ui,sans-serif;color:#eee7e0}.ds-composer-field{display:flex;align-items:flex-end;gap:8px;background:#1b1815;border:1px solid rgba(238,226,214,.17);border-radius:16px;padding:6px 6px 6px 14px;transition:border-color .2s,box-shadow .2s}.ds-composer-field:focus-within{border-color:color-mix(in srgb,var(--heat-ui,#dd4610) 65%,transparent);box-shadow:0 0 0 3px color-mix(in srgb,var(--heat-ui,#dd4610) 14%,transparent)}.ds-composer-ta{flex:1;resize:none;border:0;outline:0;background:transparent;color:#eee7e0;font:inherit;font-size:16px;line-height:1.6;padding:6px 0;margin:0;height:38px;min-height:38px;caret-color:var(--heat-ui,#dd4610)}.ds-composer-ta::placeholder{color:#958b82;opacity:1}.ds-send{width:38px;height:38px;flex:none;display:grid;place-items:center;border:0;border-radius:12px;cursor:pointer;background:#312b26;color:#958b82;transition:background .25s,color .25s,transform .12s,box-shadow .25s}.ds-composer-field:has(.ds-composer-ta:not(:placeholder-shown)) .ds-send{background:var(--heat-ui,#dd4610);color:#fff8ef;box-shadow:0 6px 14px -6px rgba(0,0,0,.65)}.ds-send:active{transform:scale(.88)}.ds-send:focus-visible{outline:2px solid var(--heat-ui,#dd4610);outline-offset:2px}"
+    },
+    {
+      "name": "보조 버튼",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "오류 카드의 다음 행동(다시 시도, 새 창으로 열기). 재 바탕에 진한 헤어라인.",
+      "html": "<div class=\"ds-btn-row\"><button class=\"ds-btn\" type=\"button\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\"/><path d=\"M3 3v5h5\"/></svg>다시 시도</button></div>",
+      "css": ".ds-btn-row{display:inline-flex;padding:14px;background:#141210;border-radius:12px}.ds-btn{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:10px;border:1px solid rgba(238,226,214,.17);background:#25211d;color:#eee7e0;font-family:'Pretendard Variable',Pretendard,'Malgun Gothic','맑은 고딕','Apple SD Gothic Neo',system-ui,sans-serif;font-size:14px;cursor:pointer;transition:background .15s}.ds-btn:hover{background:#312b26}.ds-btn:focus-visible{outline:2px solid var(--heat-ui,#c4320e);outline-offset:2px}"
+    },
+    {
+      "name": "페이지·선택 칩",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "입력창 위 맥락 칩. 페이지 칩은 무채색, 고른 글의 칩은 --heat-ui tint와 지우기 버튼.",
+      "html": "<div class=\"ds-chips\"><span class=\"ds-chip\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\"/><path d=\"M14 2v5a1 1 0 0 0 1 1h5\"/><path d=\"M10 9H8\"/><path d=\"M16 13H8\"/><path d=\"M16 17H8\"/></svg><span class=\"ds-chip-label\">제강 공정 한눈에 보기</span></span><span class=\"ds-chip ds-chip-sel\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M14 21h1\"/><path d=\"M14 3h1\"/><path d=\"M19 3a2 2 0 0 1 2 2\"/><path d=\"M21 14v1\"/><path d=\"M21 19a2 2 0 0 1-2 2\"/><path d=\"M21 9v1\"/><path d=\"M3 14v1\"/><path d=\"M3 9v1\"/><path d=\"M5 21a2 2 0 0 1-2-2\"/><path d=\"M5 3a2 2 0 0 0-2 2\"/><path d=\"M7 12h10\"/><path d=\"M7 16h6\"/><path d=\"M7 8h8\"/><path d=\"M9 21h1\"/><path d=\"M9 3h1\"/></svg><span class=\"ds-chip-label\">선택한 부분 248자</span><button class=\"ds-chip-x\" type=\"button\" aria-label=\"선택한 부분 빼기\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M18 6 6 18\"/><path d=\"m6 6 12 12\"/></svg></button></span></div>",
+      "css": ".ds-chips{display:flex;gap:6px;flex-wrap:wrap;padding:12px 14px;background:#141210;font-family:'Pretendard Variable',Pretendard,'Malgun Gothic','맑은 고딕','Apple SD Gothic Neo',system-ui,sans-serif}.ds-chip{display:inline-flex;align-items:center;gap:6px;max-width:100%;height:30px;padding:0 10px;font-size:13px;line-height:1;color:#b5aba2;background:#1b1815;border:1px solid rgba(238,226,214,.09);border-radius:8px}.ds-chip-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:250px;line-height:1.4}.ds-chip-sel{color:color-mix(in srgb,var(--heat-ui,#c4320e) 40%,#fff);border-color:color-mix(in srgb,var(--heat-ui,#c4320e) 45%,transparent);background:color-mix(in srgb,var(--heat-ui,#c4320e) 10%,transparent);padding-right:3px}.ds-chip-x{width:24px;height:24px;border-radius:6px;display:grid;place-items:center;border:0;background:transparent;color:inherit;cursor:pointer}.ds-chip-x:hover{background:color-mix(in srgb,var(--heat-ui,#c4320e) 22%,transparent)}"
+    },
+    {
+      "name": "출처·인용 칩",
+      "kind": "chip",
+      "refersTo": "source-chip",
+      "description": "답변 아래 번호 붙은 출처 알약과, 본문 안에서 --heat-ui로 물든 인용 알약.",
+      "html": "<div class=\"ds-sources-demo\"><p class=\"ds-cite-line\">출선 온도는 대략 1,500℃입니다 <a class=\"ds-cite\" href=\"#\">example.com</a></p><div class=\"ds-sources\"><a class=\"ds-src\" href=\"#\"><b>1</b><span>example.com · 예시 문서</span></a><a class=\"ds-src\" href=\"#\"><b>2</b><span>example.org · 공정 개요</span></a></div></div>",
+      "css": ".ds-sources-demo{padding:14px 20px;background:#141210;font-family:'Pretendard Variable',Pretendard,'Malgun Gothic','맑은 고딕','Apple SD Gothic Neo',system-ui,sans-serif;font-size:16px;line-height:1.7;color:#eee7e0;word-break:keep-all}.ds-cite-line{margin:0}.ds-cite{text-decoration:none;font-size:13px;line-height:1.5;padding:1px 8px;border-radius:999px;background:color-mix(in srgb,var(--heat-ui,#c4320e) 16%,transparent);color:color-mix(in srgb,var(--heat-ui,#c4320e) 42%,#fff);margin:0 1px;white-space:nowrap}.ds-cite:hover{background:color-mix(in srgb,var(--heat-ui,#c4320e) 28%,transparent)}.ds-sources{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.ds-src{display:inline-flex;align-items:center;gap:6px;max-width:100%;font-size:13px;line-height:1.4;color:#b5aba2;text-decoration:none;padding:5px 10px;border:1px solid rgba(238,226,214,.09);border-radius:999px;background:#1b1815;transition:border-color .15s,color .15s}.ds-src:hover{color:#eee7e0;border-color:rgba(238,226,214,.17)}.ds-src b{font-weight:600;color:#eee7e0;flex:none}.ds-src span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:230px}"
+    },
+    {
+      "name": "공정 기록 띠",
+      "kind": "custom",
+      "description": "답변 위 4px 띠. 읽기·생각·검색·답변 구간을 실제 걸린 시간 길이로, 그 구간의 온도 색으로 칠한다. 아래는 상태 문구와 검색 줄.",
+      "html": "<div class=\"ds-log\"><div class=\"ds-strip\" aria-hidden=\"true\"><i></i><i></i><i></i><i></i></div><div class=\"ds-log-text\">생각 1.8초 · 웹 검색 1회 · 답변 3.0초 · 전체 6.8초</div><div class=\"ds-sq ds-sq-lit\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m21 21-4.34-4.34\"/><circle cx=\"11\" cy=\"11\" r=\"8\"/></svg><span class=\"ds-sq-q\">전로 취련 온도</span></div><div class=\"ds-sq ds-sq-live\" role=\"status\" aria-label=\"웹 검색 중\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m21 21-4.34-4.34\"/><circle cx=\"11\" cy=\"11\" r=\"8\"/></svg><span class=\"ds-sq-q\"></span></div></div>",
+      "css": ".ds-log{width:380px;max-width:100%;padding:16px 20px;background:#141210;font-family:'Pretendard Variable',Pretendard,'Malgun Gothic','맑은 고딕','Apple SD Gothic Neo',system-ui,sans-serif;color:#eee7e0}.ds-strip{display:flex;gap:2px;height:4px;width:100%;max-width:300px}.ds-strip i{display:block;height:100%;min-width:4px;border-radius:2px;flex-basis:0}.ds-strip i:nth-child(1){flex-grow:6;background:#dd4610}.ds-strip i:nth-child(2){flex-grow:12;background:#f6781d}.ds-strip i:nth-child(3){flex-grow:20;background:#ffa13d}.ds-strip i:nth-child(4){flex-grow:30;background:#ffd68c}.ds-log-text{margin-top:6px;font-size:13px;line-height:1.5;color:#b5aba2}.ds-sq{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:14px;line-height:1.5;color:#b5aba2;min-height:26px}.ds-sq svg{width:16px;height:16px;flex:none;color:#958b82}.ds-sq-lit svg{color:var(--heat-ui,#ffde9b)}.ds-sq-q{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}.ds-sq-live .ds-sq-q{display:block;width:150px;height:10px;border-radius:5px;background:linear-gradient(90deg,#25211d 0%,#25211d 32%,color-mix(in srgb,var(--heat-ui,#ffde9b) 75%,transparent) 50%,#25211d 68%,#25211d 100%);background-size:260% 100%;animation:ds-shimmer 1.4s linear infinite}@keyframes ds-shimmer{from{background-position:100% 0}to{background-position:-160% 0}}@media (prefers-reduced-motion:reduce){.ds-sq-live .ds-sq-q{animation:none}}"
+    },
+    {
+      "name": "툴팁",
+      "kind": "custom",
+      "refersTo": "tooltip",
+      "description": "앱 자체 툴팁. 1초 머물러야 뜨고, 누르면 숨으며, 어떤 상태에서도 같은 모양이다. 브라우저 title은 쓰지 않는다.",
+      "html": "<div class=\"ds-tip-demo\"><button class=\"ds-tip-target\" type=\"button\" aria-label=\"새 대화\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7\"/><path d=\"M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z\"/></svg></button><span class=\"ds-tip\" role=\"tooltip\">새 대화</span></div>",
+      "css": ".ds-tip-demo{position:relative;display:inline-flex;padding:48px 40px 14px;background:#141210;border-radius:12px;font-family:'Pretendard Variable',Pretendard,'Malgun Gothic','맑은 고딕','Apple SD Gothic Neo',system-ui,sans-serif}.ds-tip-target{width:38px;height:38px;display:grid;place-items:center;border:0;background:transparent;color:#b5aba2;border-radius:10px;cursor:pointer;transition:background .15s,color .15s}.ds-tip-target:hover{background:#25211d;color:#eee7e0}.ds-tip-target:focus-visible{outline:2px solid var(--heat-ui,#c4320e);outline-offset:-2px}.ds-tip{position:absolute;left:50%;top:6px;transform:translateX(-50%);pointer-events:none;font-size:13px;line-height:1.4;color:#eee7e0;background:#2b2622;border:1px solid rgba(238,226,214,.17);padding:6px 10px;border-radius:8px;box-shadow:0 10px 24px -8px rgba(0,0,0,.55);white-space:nowrap;opacity:0;transition:opacity .12s}.ds-tip-demo:has(.ds-tip-target:hover) .ds-tip{opacity:1;transition-delay:1s}.ds-tip-demo:has(.ds-tip-target:active) .ds-tip{opacity:0;transition-delay:0s}"
+    },
+    {
+      "name": "오류 카드",
+      "kind": "card",
+      "description": "담금질의 색. 체리 60% 테두리와 식은 쇠 32% 바탕, 이유와 다음 행동을 함께 준다.",
+      "html": "<div class=\"ds-err-demo\"><div class=\"ds-err\" role=\"alert\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" x2=\"12\" y1=\"8\" y2=\"12\"/><line x1=\"12\" x2=\"12.01\" y1=\"16\" y2=\"16\"/></svg><div class=\"ds-err-body\"><div>에이전트 서버(localhost:8787)에 연결하지 못했어요.</div><div class=\"ds-err-detail\">서버 PC에서 에이전트가 켜져 있는지 확인해 주세요.</div><div class=\"ds-err-acts\"><button class=\"ds-err-btn\" type=\"button\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\"/><path d=\"M3 3v5h5\"/></svg>다시 시도</button></div></div></div></div>",
+      "css": ".ds-err-demo{width:420px;max-width:100%;padding:14px 20px;background:#141210;font-family:'Pretendard Variable',Pretendard,'Malgun Gothic','맑은 고딕','Apple SD Gothic Neo',system-ui,sans-serif;word-break:keep-all}.ds-err{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border:1px solid rgba(182,39,14,.6);background:rgba(62,56,52,.32);border-radius:12px;color:#f1e4dc;font-size:15px;line-height:1.6}.ds-err>svg{color:rgb(232,96,30);margin-top:3px;width:18px;height:18px;flex:none}.ds-err-body{flex:1;min-width:0}.ds-err-detail{font-size:13px;color:#bfb2a8;margin-top:4px}.ds-err-acts{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}.ds-err-btn{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:10px;border:1px solid rgba(238,226,214,.17);background:#25211d;color:#eee7e0;font:inherit;font-size:14px;cursor:pointer;transition:background .15s}.ds-err-btn:hover{background:#312b26}.ds-err-btn:focus-visible{outline:2px solid var(--heat-ui,#c4320e);outline-offset:2px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "쇳물 한 방울",
+    "overview": "에이전트는 생물이 아니라 뜨거운 금속 한 방울이다. 스스로 빛나고, 출렁이고, 식어 간다. 이 세계의 색과 움직임은 모두 한 규칙에서 나온다. 온도가 곧 상태다. 온도 `T`(0~1) 하나가 방울의 색, 빛 번짐, 출렁임 속도, 패널 윗선의 열빛, 그리고 포커스·보내기·링크 같은 UI 강조색을 함께 정한다. 색을 바꾸지 않는다. 데워지고 식을 뿐이다.\n\n바탕은 따뜻한 흑연이다. 거의 검은 갈색 네 단(`bg`→`bg4`)과 슬래그 회색 헤어라인 두 단으로 층을 나누고, 그림자는 호스트 페이지 위에 떠 있는 판에만 검게 깐다. 빛은 쇳물에서만 나온다. 방울의 halo, 답 끝의 녹은 구슬 커서, 페이지를 훑는 열선, 패널 윗선의 열빛, 불티가 그것이다. 밀도는 상용 챗봇 수준으로 여유 있게 둔다. 본문 16px, 줄 간격 1.7이다.\n\n움직임은 물리를 따른다. 데워질 때는 빠르고(초당 2.6) 식을 때는 느리다(초당 0.42). 그래서 답이 끝난 뒤 몇 초에 걸쳐 식는 모습이 보인다. 오류만 담금질처럼 초당 9로 순식간에 식는다. 누르면 표면장력으로 퍼졌다 튕기고, 스크롤하면 점성 때문에 쇳물이 반대로 쏠리며, 커서가 220px 안에 오면 관성으로 최대 3.5px 기운다. 새로 나타나는 것은 뜨겁게 나와 식는다. 스프링은 실제 스프링 식을 CSS `linear()`로 구워 쓴다. `prefers-reduced-motion`에서는 출렁임·기울기·불티·열선·튕김·고리를 끄고, 온도 색은 상태 정보이므로 남긴다. 거부한 기본형은 파란·보라 그라데이션 구슬이 숨쉬는 AI 위젯이다.",
+    "keyCharacteristics": [
+      "흑체복사 램프 한 줄이 모든 강조색이다. 강조색은 고르지 않고 온도에서 계산한다.",
+      "따뜻한 흑연 무채색 네 단과 헤어라인 두 단으로 층을 나눈다.",
+      "빛을 내는 것은 쇳물뿐이고, 높이는 검은 그림자로만 표시한다.",
+      "상태마다 정해진 온도와 에너지가 있고, 모든 전환은 데워짐·식음으로 보인다.",
+      "새로 나타난 글자와 조각은 뜨거운 색으로 나와 본문색으로 식는다.",
+      "위젯은 남의 페이지에 주입되므로 Shadow DOM 안에서 px로 고정한다."
+    ],
+    "rules": [
+      {
+        "name": "The One Temperature Rule",
+        "body": "위젯 안의 살아 있는 UI 강조색(포커스 링, 보내기 준비, 링크, 인용 칩, 선택 칩, 검색 막대, 입력 커서, 패널 윗선)은 모두 지금 온도 하나, `--heat-ui`에서 나온다. 고정 열색을 UI에 박지 않는다. 지난 온도를 함께 보여 주는 것은 공정 기록 띠뿐이고, 그것은 기록이기 때문이다.",
+        "section": "colors"
+      },
+      {
+        "name": "The Hotter-Edge Rule",
+        "body": "`--heat-ui`는 방울 몸통보다 0.18 뜨겁게 잡고 0.28(체리)과 0.9(볏짚) 사이로 자른다. 대기 중에도 흑연 위에서 3:1 넘게 보이고, 가장 뜨거울 때도 흰빛까지 가지 않아 열색으로 읽히게 하기 위해서다.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mix-Don't-Pick Rule",
+        "body": "강조 tint는 새 hex를 고르지 않고 `--heat-ui`를 섞어 만든다. 글자는 흰색과 40~52%, 테두리는 투명과 45~65%, 채움은 투명과 10~28%로 섞는다(`color-mix(in srgb, ...)`).",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink Flip Rule",
+        "body": "열색 채움 위의 글자는 채움 온도로 정한다. 밝은 체리(heat-045)보다 차가운 채움에는 밝은 글자를, 그보다 뜨거운 채움에는 쇳물 위 먹(ink-on-heat)을 쓴다.",
+        "section": "colors"
+      },
+      {
+        "name": "The Fixed Sample Rule",
+        "body": "온도가 흐르지 않는 정적 화면(설치 페이지)은 램프의 고정 표본을 쓴다. 쇳물로 만든 물건(북마클릿 버튼, 단계 원판)만 열색으로 채우고, 나머지 강조(링크, 포커스)는 밝은 주황~노랑 구간(T 0.70~0.82)의 고정값이다.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sixteen-and-Thirteen Rule",
+        "body": "본문은 16px·줄 간격 1.7 안팎, 보조 글자는 13~14px이고 13px보다 작은 글자는 없다. 코드와 표는 14~15px이다. 회사의 22~24인치 FHD 모니터(배율 100%)에서 상용 챗봇만큼 읽혀야 한다.",
+        "section": "typography"
+      },
+      {
+        "name": "The Host-Proof Pixel Rule",
+        "body": "위젯(Shadow DOM 안)은 px로, 설치 페이지는 rem으로 크기를 정한다. 위젯은 남의 페이지에 주입되므로 rem을 쓰면 호스트의 루트 글자 크기(예: `html{font-size:62.5%}`)를 따라가 깨진다. 그래서 `:host{all:initial}`로 상속을 끊고 px로 고정한다. 브라우저 확대(Ctrl +)는 px도 함께 키우므로 확대 접근성은 유지된다. 설치 페이지는 우리 서버가 소유한 화면이라 `html{font-size:100%}` 위에 rem을 쓴다.",
+        "section": "typography"
+      },
+      {
+        "name": "The Cooling Type Rule",
+        "body": "스트리밍 중 새로 도착한 글자는 램프 0.62~1.0의 뜨거운 색으로 나와 0.9초 안에 본문색으로 식는다. 다시 그리는 것은 쓰이는 중인 마지막 블록뿐이고, 다 식은 글자는 정적인 본문이다. 말풍선·칩·출처처럼 새로 놓이는 조각의 글자도 같은 방식(cast, 약 1초)으로 주황에서 식는다.",
+        "section": "typography"
+      },
+      {
+        "name": "The Keep-All Rule",
+        "body": "모든 화면에 `word-break: keep-all`과 `overflow-wrap: anywhere`를 함께 건다. 한글 어절은 쪼개지 않고, 긴 주소만 어디서든 끊는다.",
+        "section": "typography"
+      },
+      {
+        "name": "The Light-Is-Heat Rule",
+        "body": "빛을 내는 것은 쇳물뿐이다. 방울 halo, 녹은 구슬 커서, 페이지를 훑는 열선, 패널 윗선, 불티, 뜨겁게 나온 글자, 불티가 닿아 불붙는 검색 아이콘이 그렇다. 쇳물이 닿은 순간의 빛은 1초 안에 식는다. 쉬는 상태의 버튼·카드·입력창·칩은 발광 그림자를 갖지 않는다.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Black Drop Rule",
+        "body": "높이는 검은 그림자로만 표시한다. 그림자는 아래로 떨어지고(y 양수) 퍼짐은 음수다. 색 있는 그림자로 높이를 나타내지 않는다.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Ring-Not-Glow Rule",
+        "body": "포커스는 `--heat-ui` 2px 실선 외곽선으로 보인다. 입력창은 포커스 때 테두리를 `--heat-ui` 65%로 바꾸고 흐림 없는 3px 고리(`--heat-ui` 14%)를 두른다.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Round-Is-Molten Rule",
+        "body": "완전한 원은 쇳물에만 쓴다. 방울, 녹은 구슬 커서, 읽지 않음 고리, 설치 페이지의 단계 번호 원판과 북마클릿 점이 그렇다. 쇳물이 아닌 UI 요소는 원으로 만들지 않는다.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do 위젯의 모든 강조색을 `--heat-ui`(방울 자체는 `--heat`)에서 가져오고, tint는 `color-mix`로 흰색이나 투명과 섞어 만든다.",
+      "Do 새 상태가 생기면 `PHASES`에 온도와 에너지 한 쌍으로 더하고, 전환은 데워짐(초당 2.6)과 식음(초당 0.42)으로 보이게 한다.",
+      "Do 본문 16px·줄 간격 1.7, 보조 글자 13~14px, 코드·표 14px로 쓴다.",
+      "Do 위젯 안에서는 px, 설치 페이지처럼 서버가 소유한 화면에서는 rem을 쓴다.",
+      "Do 새로 나타나는 글자와 조각은 뜨거운 색으로 내보내 1초 안에 본문색으로 식힌다.",
+      "Do 아이콘은 tools/fetch_icons.py로 Lucide에서 가져오고, 선 굵기 2·`currentColor`로 그린다.",
+      "Do 툴팁은 `data-tip`과 앱 툴팁으로, 1초 머물렀을 때만 띄운다.",
+      "Do 삭제는 `trash-2` → `triangle-alert` 두 번 누르기로, 같은 버튼 자리에서 끝낸다.",
+      "Do 포커스는 `--heat-ui` 2px 외곽선으로 늘 보이게 하고, 거친 포인터에서는 누름 영역을 44px로 키운다.",
+      "Do `prefers-reduced-motion`에서는 움직임만 끄고 온도 색은 남긴다."
+    ],
+    "donts": [
+      "Don't 파란·보라 그라데이션 구슬이나 램프 밖 색조(파랑, 보라, 초록)를 강조색으로 쓰지 않는다.",
+      "Don't 쉬는 상태의 버튼·카드·입력창·칩에 흐릿한 발광 그림자(색 있는 blur `box-shadow`, `drop-shadow`)를 주지 않는다. 빛은 쇳물의 것이다.",
+      "Don't 높이를 색 있는 그림자로 표시하지 않는다. 높이 그림자는 검정만 쓴다.",
+      "Don't 위젯 안에서 rem을 쓰거나 호스트 스타일을 상속받지 않는다(`:host{all:initial}` 유지).",
+      "Don't 13px보다 작은 글자를 쓰지 않는다.",
+      "Don't 아이콘을 손으로 그리거나, 글자 기호나 아이콘 글꼴로 대신하지 않는다.",
+      "Don't 브라우저 `title` 툴팁, 삭제 확인 팝업이나 모달을 쓰지 않는다.",
+      "Don't 위젯 UI에 고정 열색을 박아 지금 온도와 다른 두 번째 열색을 만들지 않는다."
+    ]
+  }
+}
