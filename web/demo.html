@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>제강 공정 한눈에 보기 — 테스트용 예시 페이지</title>
+<meta name="description" content="고로에서 압연까지 일관제철 공정의 흐름과 대략적인 온도를 정리한 테스트용 예시 문서">
+<style>
+  :root { color-scheme: light; }
+  body { margin: 0; background: #f6f4f1; color: #23201d; font-family: "Pretendard Variable", Pretendard, "Malgun Gothic", system-ui, sans-serif; font-size: 1.0625rem; line-height: 1.75; }
+  header.site { background: #fff; border-bottom: 1px solid #e4dfd8; }
+  header.site div { max-width: 46rem; margin: 0 auto; padding: .9rem 1.5rem; font-weight: 700; letter-spacing: -.01em; }
+  header.site span { color: #8a8178; font-weight: 400; font-size: .875rem; margin-left: .5rem; }
+  article { max-width: 46rem; margin: 0 auto; padding: 3rem 1.5rem 8rem; }
+  .badge { display: inline-block; font-size: .8125rem; color: #6d655d; border: 1px solid #ddd6cd; border-radius: 999px; padding: .1rem .6rem; margin-bottom: 1rem; }
+  h1 { font-size: 2.125rem; line-height: 1.3; letter-spacing: -.03em; margin: 0 0 1rem; }
+  h2 { font-size: 1.375rem; margin: 2.75rem 0 .75rem; letter-spacing: -.02em; }
+  p { margin: 0 0 1.1rem; }
+  table { width: 100%; border-collapse: collapse; font-size: .9375rem; margin: 1rem 0 1.5rem; background: #fff; border: 1px solid #e4dfd8; }
+  th, td { text-align: left; padding: .6rem .8rem; border-bottom: 1px solid #ece7e0; font-variant-numeric: tabular-nums; }
+  th { background: #faf8f5; color: #5f5850; font-weight: 600; }
+  blockquote { margin: 1.5rem 0; padding: .25rem 0 .25rem 1rem; border-left: 2px solid #d9cfc3; color: #5f5850; }
+  .note { font-size: .875rem; color: #7a7168; border-top: 1px solid #e4dfd8; padding-top: 1rem; margin-top: 3rem; }
+</style>
+</head>
+<body>
+<header class="site"><div>제철 공정 노트<span>테스트용 예시 사이트</span></div></header>
+<article>
+  <span class="badge">예시 문서 · 수치는 교과서 수준의 대략값</span>
+  <h1>제강 공정 한눈에 보기: 쇳물이 강판이 되기까지</h1>
+  <p>일관제철소는 철광석을 녹여 쇳물을 만들고, 그 쇳물에서 불순물을 걷어 낸 뒤, 굳히고 늘려서 강판이나 선재 같은 제품을 만든다. 이 문서는 그 흐름을 <strong>제선 → 제강 → 연속주조 → 압연</strong> 네 단계로 나누어 정리한다.</p>
+
+  <h2>1. 제선: 고로에서 쇳물을 만든다</h2>
+  <p>고로(용광로) 위쪽으로 철광석과 코크스를 번갈아 넣고, 아래쪽 풍구로 약 1,200℃ 안팎의 뜨거운 바람(열풍)을 불어 넣는다. 코크스가 타면서 생긴 일산화탄소가 철광석의 산소를 빼앗아 철을 환원시킨다.</p>
+  <p>이렇게 녹은 쇳물을 <strong>용선</strong>이라고 하며, 고로 아래 출선구에서 대략 1,500℃로 뽑아낸다. 용선에는 탄소가 4% 안팎으로 많이 녹아 있어 그대로는 단단하지만 잘 부러진다.</p>
+
+  <h2>2. 제강: 전로에서 탄소를 줄인다</h2>
+  <p>용선을 전로에 옮겨 담고 순도 높은 산소를 불어 넣는다. 이 과정을 <strong>취련</strong>이라고 부른다. 산소가 탄소·규소·인 같은 원소와 반응하면서 열이 나기 때문에, 따로 연료를 쓰지 않아도 쇳물 온도는 1,600℃ 이상으로 올라간다.</p>
+  <p>취련이 끝난 쇳물을 <strong>용강</strong>이라고 한다. 이후 2차 정련에서 성분을 미세하게 맞추고, 필요한 합금 원소를 넣는다.</p>
+
+  <table>
+    <thead><tr><th>단계</th><th>주요 설비</th><th>무엇을 하나</th><th>대략적인 온도</th></tr></thead>
+    <tbody>
+      <tr><td>제선</td><td>고로</td><td>철광석을 환원해 용선을 만든다</td><td>출선 약 1,500℃</td></tr>
+      <tr><td>제강</td><td>전로, 2차 정련 설비</td><td>산소로 탄소·불순물을 줄여 용강을 만든다</td><td>약 1,600~1,700℃</td></tr>
+      <tr><td>연속주조</td><td>연주기</td><td>용강을 주형에 부어 슬래브 등으로 굳힌다</td><td>응고 시작 약 1,500℃</td></tr>
+      <tr><td>압연</td><td>열간·냉간 압연기</td><td>슬래브를 눌러 얇고 긴 강판으로 만든다</td><td>열연 재가열 약 1,100~1,250℃</td></tr>
+    </tbody>
+  </table>
+
+  <h2>3. 연속주조: 쇳물을 굳힌다</h2>
+  <p>용강을 턴디시라는 중간 그릇을 거쳐 물로 식히는 구리 주형에 계속 흘려 넣는다. 바깥부터 굳은 껍질이 아래로 끌려 내려가며 안쪽까지 차례로 굳고, 일정한 길이로 잘라 두꺼운 판 모양의 <strong>슬래브</strong>를 만든다.</p>
+  <blockquote>쇳물은 식으면서 색이 바뀐다. 흰빛에 가까운 노랑에서 주황, 체리색 붉은빛을 거쳐 어두운 회색이 된다. 숙련자는 이 색으로 대략의 온도를 가늠하기도 한다.</blockquote>
+
+  <h2>4. 압연: 늘리고 얇게 만든다</h2>
+  <p>슬래브를 가열로에서 다시 데운 뒤 여러 쌍의 롤 사이로 통과시켜 두께를 줄인다. 뜨거운 상태로 미는 것을 <strong>열간압연</strong>, 상온에서 더 얇고 매끈하게 만드는 것을 <strong>냉간압연</strong>이라고 한다. 자동차 외판처럼 표면 품질이 중요한 제품은 냉간압연과 도금을 거친다.</p>
+
+  <h2>함께 알아 두면 좋은 용어</h2>
+  <p><strong>슬래그</strong>는 쇳물 위에 뜨는 비금속 찌꺼기로, 불순물을 붙잡아 쇳물과 분리하는 역할을 한다. <strong>코크스</strong>는 석탄을 공기 없이 구워 만든 연료이자 환원제다. <strong>턴디시</strong>는 레이들에서 받은 용강을 여러 주형으로 고르게 나눠 주는 중간 용기다.</p>
+
+  <p class="note">이 페이지는 페이지 에이전트를 시험하기 위한 예시 문서입니다. 수치는 일반적인 교과서 수준의 대략값이며 특정 회사의 공정 조건이 아닙니다.</p>
+</article>
+</body>
+</html>

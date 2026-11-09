@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>페이지 에이전트</title>
+<style>
+  :root {
+    --bg: #141210; --bg2: #1b1815; --bg3: #25211d; --line: rgba(238,226,214,.10); --line2: rgba(238,226,214,.18);
+    --text: #eee7e0; --text2: #b5aba2; --text3: #958b82; --ember: #f06a16; --ember2: #ff9a3c;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: "Pretendard Variable", Pretendard, "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", system-ui, sans-serif;
+    font-size: 1rem; line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: rgba(240,106,22,.38); color: #fff; }
+  a { color: #ffb36b; text-underline-offset: 3px; text-decoration-color: rgba(255,179,107,.45); }
+  a:hover { text-decoration-color: currentColor; }
+  :focus-visible { outline: 2px solid var(--ember2); outline-offset: 3px; border-radius: 6px; }
+  main { max-width: 46rem; margin: 0 auto; padding: 4.5rem 1.5rem 7rem; }
+  h1 { font-size: 2.25rem; line-height: 1.25; letter-spacing: -.03em; margin: 0 0 .75rem; font-weight: 750; color: #fff6ee; }
+  .lead { font-size: 1.125rem; color: var(--text2); margin: 0 0 3rem; max-width: 36rem; }
+  h2 { font-size: 1.125rem; letter-spacing: -.01em; margin: 3.25rem 0 1rem; color: #fff6ee; }
+  ol.steps { list-style: none; padding: 0; margin: 0; counter-reset: s; display: grid; gap: 1.25rem; }
+  ol.steps > li { counter-increment: s; display: grid; grid-template-columns: 2rem 1fr; gap: .25rem 1rem; align-items: start; }
+  ol.steps > li::before {
+    content: counter(s); width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center;
+    font-size: .875rem; font-weight: 700; color: #1c0d04; background: radial-gradient(circle at 38% 34%, #ffe1a6, #ff9a3c 55%, #d9420f);
+    font-variant-numeric: tabular-nums;
+  }
+  .step-title { font-weight: 650; }
+  .step-body { grid-column: 2; color: var(--text2); }
+  kbd {
+    font-family: inherit; font-size: .8125rem; padding: .1rem .45rem; border-radius: .375rem; border: 1px solid var(--line2);
+    background: var(--bg3); color: var(--text); white-space: nowrap;
+  }
+  .bm-row { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin: 1rem 0 .25rem; grid-column: 2; }
+  .bm {
+    display: inline-flex; align-items: center; gap: .6rem; height: 3rem; padding: 0 1.25rem 0 .875rem; border-radius: 999px;
+    text-decoration: none; font-weight: 700; color: #1c0d04; cursor: grab;
+    background: linear-gradient(180deg, #ffb45a, #f06a16); box-shadow: 0 10px 22px -10px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,240,210,.6);
+    transition: transform .15s, box-shadow .2s;
+  }
+  .bm:hover { transform: translateY(-1px); box-shadow: 0 14px 26px -10px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,240,210,.6); }
+  .bm:active { cursor: grabbing; transform: scale(.98); }
+  .bm-dot { width: 1.25rem; height: 1.25rem; border-radius: 50%; background: radial-gradient(circle at 38% 34%, #fff9ec, #ffc05e 45%, #b3260e 90%); box-shadow: 0 0 0 2px rgba(28,13,4,.25); }
+  .btn {
+    display: inline-flex; align-items: center; gap: .5rem; height: 2.5rem; padding: 0 1rem; border-radius: .75rem; font: inherit; font-size: .9375rem;
+    color: var(--text); background: var(--bg3); border: 1px solid var(--line2); cursor: pointer; transition: background .15s;
+  }
+  .btn:hover { background: #312b26; }
+  .btn svg { width: 1.125rem; height: 1.125rem; }
+  .muted { color: var(--text3); font-size: .875rem; }
+  .note { margin-top: 1.25rem; padding: 1rem 1.25rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--bg2); color: var(--text2); }
+  .note b { color: var(--text); }
+  dl.info { display: grid; grid-template-columns: max-content 1fr; gap: .625rem 1.5rem; margin: 0; padding: 1.25rem 1.5rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--bg2); }
+  dl.info dt { color: var(--text3); font-size: .875rem; padding-top: .1rem; }
+  dl.info dd { margin: 0; font-variant-numeric: tabular-nums; word-break: break-all; }
+  .addr { display: flex; flex-wrap: wrap; gap: .5rem .75rem; align-items: center; }
+  .addr code { font-family: D2Coding, Consolas, monospace; font-size: .9375rem; }
+  ul.keys { margin: 0; padding-left: 1.25rem; color: var(--text2); }
+  ul.keys li { margin: .25rem 0; }
+  .toast { position: fixed; left: 50%; bottom: 2rem; transform: translate(-50%, 1rem); opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
+    background: #2b2622; border: 1px solid var(--line2); color: var(--text); font-size: .875rem; padding: .5rem .9rem; border-radius: .625rem; }
+  .toast.on { opacity: 1; transform: translate(-50%, 0); }
+  @media (max-width: 34rem) { main { padding-top: 3rem; } h1 { font-size: 1.875rem; } dl.info { grid-template-columns: 1fr; gap: .25rem; } dl.info dd { margin-bottom: .5rem; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>페이지 에이전트</h1>
+  <p class="lead">지금 보고 있는 웹 페이지를 읽고 바로 답합니다. 필요하면 웹 검색으로 최신 정보도 찾아 줍니다. 확장 프로그램 설치 없이 북마크 하나로 씁니다.</p>
+
+  <h2>설치</h2>
+  <ol class="steps">
+    <li>
+      <div class="step-title">북마크바를 켭니다</div>
+      <div class="step-body">Chrome·Edge에서 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd></div>
+    </li>
+    <li>
+      <div class="step-title">아래 버튼을 북마크바로 끌어다 놓습니다</div>
+      <div class="bm-row">
+        <a class="bm" href="{{BOOKMARKLET}}" title="북마크바로 끌어다 놓으세요"><span class="bm-dot" aria-hidden="true"></span>페이지 에이전트</a>
+        <button class="btn" type="button" id="copy"><span data-icon="copy"></span>북마클릿 코드 복사</button>
+      </div>
+      <div class="step-body muted">끌어다 놓기가 안 되면 코드를 복사해 새 북마크의 URL 칸에 붙여 넣으세요.</div>
+    </li>
+    <li>
+      <div class="step-title">아무 페이지에서나 북마크를 누릅니다</div>
+      <div class="step-body">오른쪽 아래에 쇳물 방울이 내려앉고 대화창이 열립니다. 다시 누르면 닫힙니다. 페이지를 새로 열면 한 번 더 눌러 주세요.</div>
+    </li>
+  </ol>
+
+  <div class="note">
+    <b>https 사이트에서 처음 쓸 때</b> Chrome이 “로컬 네트워크의 기기를 찾고 연결” 허용을 물을 수 있습니다. <b>허용</b>을 누르세요.
+    보안 정책 때문에 페이지에 직접 붙지 못하는 사이트에서는 같은 대화창이 새 창으로 열립니다.
+  </div>
+
+  <h2>지금 해 보기</h2>
+  <p class="step-body" style="margin:0">이 페이지 오른쪽 아래 방울을 눌러 보세요. 본문이 있는 페이지로 시험하려면 <a href="/demo">예시 페이지</a>에서 북마크를 누르면 됩니다.</p>
+
+  <h2>이 서버</h2>
+  <dl class="info">
+    <dt>모델</dt><dd>{{MODEL}}</dd>
+    <dt>연결 방식</dt><dd>{{PROVIDER}}</dd>
+    <dt>웹 검색</dt><dd>{{WEB_SEARCH}}</dd>
+    <dt>공개 범위</dt><dd>{{SHARED}}</dd>
+    <dt>동료에게 줄 주소</dt><dd class="addr"><code id="server">{{SERVER}}</code><button class="btn" type="button" id="copy-addr"><span data-icon="copy"></span>주소 복사</button></dd>
+  </dl>
+
+  <h2>단축키</h2>
+  <ul class="keys">
+    <li><kbd>Enter</kbd> 보내기 · <kbd>Shift</kbd> + <kbd>Enter</kbd> 줄바꿈</li>
+    <li><kbd>Esc</kbd> 답변 중이면 멈추기, 아니면 닫기</li>
+    <li>페이지에서 글을 드래그해 고른 뒤 물으면 그 부분을 중심으로 답합니다.</li>
+  </ul>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+  window.__pageAgentServer = location.origin;
+  window.__pageAgentAutoOpen = false;
+</script>
+<script src="/agent.js"></script>
+<script>
+(function () {
+  var icons = window.__pageAgentIcons || {};
+  document.querySelectorAll("[data-icon]").forEach(function (slot) {
+    var NS = "http://www.w3.org/2000/svg", svg = document.createElementNS(NS, "svg");
+    [["viewBox", "0 0 24 24"], ["fill", "none"], ["stroke", "currentColor"], ["stroke-width", "2"], ["stroke-linecap", "round"], ["stroke-linejoin", "round"], ["aria-hidden", "true"]]
+      .forEach(function (a) { svg.setAttribute(a[0], a[1]); });
+    (icons[slot.getAttribute("data-icon")] || []).forEach(function (n) {
+      var el = document.createElementNS(NS, n[0]);
+      Object.keys(n[1]).forEach(function (k) { el.setAttribute(k, n[1][k]); });
+      svg.appendChild(el);
+    });
+    slot.replaceWith(svg);
+  });
+  var toast = document.getElementById("toast"), timer;
+  function say(t) { toast.textContent = t; toast.classList.add("on"); clearTimeout(timer); timer = setTimeout(function () { toast.classList.remove("on"); }, 1800); }
+  function copy(text, done) {
+    if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(text).then(function () { say(done); }); return; }
+    var t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.left = "-9999px";
+    document.body.appendChild(t); t.select();
+    try { document.execCommand("copy"); say(done); } catch (e) { say("복사하지 못했어요. 직접 선택해 복사해 주세요."); }
+    t.remove();
+  }
+  document.getElementById("copy").addEventListener("click", function () {
+    copy(document.querySelector(".bm").getAttribute("href"), "북마클릿 코드를 복사했어요");
+  });
+  document.getElementById("copy-addr").addEventListener("click", function () {
+    copy(document.getElementById("server").textContent + "/", "서버 주소를 복사했어요");
+  });
+})();
+</script>
+</body>
+</html>

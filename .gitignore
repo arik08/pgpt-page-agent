@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/live/
+.playwright-mcp/
+.impeccable/questions/
